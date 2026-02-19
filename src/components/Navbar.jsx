@@ -3,7 +3,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 
-const NavBar = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navLinkClass = ({ isActive }) =>
     `text-sm font-medium text-center transition-colors duration-200 ${
@@ -32,7 +32,7 @@ const NavBar = () => {
           className="md:hidden p-2 rounded-md hover:bg-(--color-border) transition-colors duration-200"
           aria-label="Toggle menu"
         >
-          ☰
+          {isOpen ? "ⅹ" : "☰"}
         </button>
         <div
           className={`md:hidden absolute top-16 left-0 w-full bg-(--color-surface) border-b shadow-sm transition-all duration-400 ease-in-out origin-top
@@ -69,4 +69,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;
